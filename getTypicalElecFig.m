@@ -1,3 +1,9 @@
+% generates Fig 5. 
+% typical electrode for one monkey
+% displays image patches at Receptive field and approximated patches
+% also displays actual LFP power vs frequency, and 
+% actual vs estimated gamma band response
+
 function getTypicalElecFig
 
 %1. fix some variables to be used later
@@ -10,7 +16,7 @@ powerOption   = 2;
 patchSizeDeg    = 3;            % images cropped to square patches, halflength
 radiusMatrixDeg = 0.3:0.3:2.1;  % these sizes will be checked
 
-selectOptions.meanThr =  [0.05 0.1 0.1]; % [0.05 0.05 0.05];%
+selectOptions.meanThr =  [0.05 0.1 0.1]; 
 selectOptions.stdThr  = 2*selectOptions.meanThr;
 selectOptions.measure = 'diff';
 selectOptions.method  = 'vector';

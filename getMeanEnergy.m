@@ -38,9 +38,6 @@ savedDataDir = fullfile('savedData','spectra');  % local folder where saved powe
 if ~exist(savedDataDir,'dir'),          mkdir(savedDataDir);            end
 
 % get spectral data for all electrodes
-% rfData = load(fullfile(folderSourceString,'data','rfData',subjectName,[subjectName gridType 'RFData.mat']));
-% electrodeList = rfData.highRMSElectrodes;
-% rfStats = rfData.rfStats(electrodeList);
 [rfStats,~,LFPElectrodeList,EcogElectrodeList,~] = getRFdetails(subjectName,'savedData'); % savedData dir has 'RFDetails.mat' file
 electrodeList=[LFPElectrodeList{1}; EcogElectrodeList{1}]; % unwrap them from cell.
 rfStats = rfStats{1};

@@ -1,6 +1,5 @@
 
-% 110221: modified to rfStatsPix=[]. Not deleted to keep compatibility.
-
+% returns RF details of chosen subjects. 
 function [rfStatsDeg,rfStatsPix,LFPElectrodeList,EcogElectrodeList,subjectNames] = getRFdetails(subjectNamesA,folderName)
 
 filename  = fullfile(folderName,'RFDetails4Subjects.mat');
@@ -15,6 +14,6 @@ else
     EcogElectrodeList = EcogElectrodeList(ind);
     subjectNames = subjectNames(ind);   
 end
-rfStatsPix=[];  % calculate separately
+rfStatsPix=[];
 
 end

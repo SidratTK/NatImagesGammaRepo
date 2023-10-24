@@ -12,7 +12,7 @@
 
 function [modelParams,modelParamsAll,modelParamsFold,gammaVals]= getGammaParameters(subjectName,tBL,tST,fBandGamma,fBad,HueFlag)
 gridType='Microelectrode';
-folderSourceString='/Volumes/SeagateSid/SIDRAT/';     % 'W:\'; % where 'data' folder with extracted data is kept
+folderSourceString=pwd; % where 'data' folder with extracted data is kept
 
 if HueFlag % hue parameters
     [modelParams,modelParamsAll,modelParamsFold,gammaVals]= getGammaParametersHue(subjectName,tBL,tST,fBandGamma,fBad);

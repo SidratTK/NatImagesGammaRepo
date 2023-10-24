@@ -25,7 +25,7 @@ if ~exist('tST','var'),                    tST = [0.25 0.5]; end
 if ~exist('electrodeNum','var'),           electrodeNum = 2; end
 if ~exist('numTapers','var'),              numTapers = 1;    end  
 % used for Multitaper by Chronux
-modelDataDir = fullfile('savedData','spectra');% fullfile('modelData','derivatives','spectra');  % where saved power response files are kept
+modelDataDir = fullfile('savedData','spectra');  % where saved power response files are kept
 if ~exist(modelDataDir,'dir'), mkdir(modelDataDir);   end
 
 % get the responses for this particular experiment:

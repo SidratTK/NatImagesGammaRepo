@@ -1,6 +1,7 @@
 % analyzes Data on all selected sessions.
 % plots bar graph of averaged correlations between predicted and actual
 % image gamma
+% generates Figure 6.
 
 
 folderSourceString= pwd;
@@ -184,22 +185,5 @@ text(1.1,1.35,'M1','FontSize',fontSizeLarge,'FontWeight','bold','Parent',bPlots(
 text(1.1,1.35,'M2','FontSize',fontSizeLarge,'FontWeight','bold','Parent',bPlots(1,3),'units','normalized');
 text(0.7,-0.3,'Parameters chosen','fontSize',fontSizeLarge,'fontWeight','bold','Parent',bPlots(3,1),'units','normalized');
 text(0.7,-0.3,'Parameters chosen','fontSize',fontSizeLarge,'fontWeight','bold','Parent',bPlots(3,3),'units','normalized');
-
-% get the best performance of model and plot that as horizontal line
- [elCorr] = runGetGammaParametersHue(0);
- for m=1:2 
-     elCorrMean(m) = mean(cell2mat(elCorrM(m,:)),2);
-     elCorrSd(m)   = std(cell2mat(elCorrM(m,:)),[],2);
-     for r=[1 3]
-         for i=1:2
-             hPlot=bPlots(r,i+m*(m-1));
-             yline(hPlot,elCorrMean(m),'Color',[0.5 0.5 0.5],'LineWidth',2);
-         end
-     end
- end
- disp('Mean correlation of parametric hue model +-SD is: ')
- disp(['M1: ',num2str(elCorrMean(1)),'+-',num2str(elCorrSd(1)); ...
-       'M2: ',num2str(elCorrMean(2)),'+-',num2str(elCorrSd(2))]);
-
 
 

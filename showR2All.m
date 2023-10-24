@@ -1,14 +1,16 @@
 % showR2 All 
-% envelope function for checking independence of features
-% this function takes all electrodes of the protocol type chosen and for
-% each of them gets the independence between the variables checked. 
-% plots the distribution of R2 (variance explained) by model (marginal and Svd based linear model)
-% Also prints out value of separability index of variables for all protocol types
-% for both monkeys
+% function for checking independence of features
+% this function takes all electrodes of each protocol type and for
+% each electrode checks the independence between the variables.
+% makes marginal sum, marginal product and svd product based models
+% makes figures for typical electrodes.
+% plots the distribution across elecs of R2 (variance explained) by model (marginal and Svd based linear model)
+% prints out value of separability index of variables for all protocol types
+% STK 2023
 
 function [mrgPrd] = showR2All()
 
-folderSourceString='/Volumes/SeagateSid/SIDRAT/'; % 'W:\'; % where 'data' folder with extracted data is kept
+folderSourceString=pwd; % where 'data' folder with extracted data is kept
 
 [mrgPrd{1},svdPrd{1},mrgSum{1},subjectNames{1},protocolTypes{1},~,electrodeList{1}] = checkIndependentTuningEnv(folderSourceString,0);
 [mrgPrd{2},svdPrd{2},mrgSum{2},subjectNames{2},protocolTypes{2},~,electrodeList{2}] = checkIndependentTuningHueEnv(folderSourceString,0);
